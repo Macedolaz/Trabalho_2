@@ -68,7 +68,7 @@ def login():
         frase_semente = request.json.get('palavra_semente', None)
         
  
-        print(f"Frase-semente recebida: {frase_semente}")
+        print(f"Frase_semente recebida: {frase_semente}")
 
 
         if not frase_semente:
@@ -86,7 +86,7 @@ def login():
             session['email'] = resultado[0]
             return redirect('/oficial')
         else:
-            return "Frase-semente incorreta", 400
+            return "Frase_semente incorreta", 400
 
     return render_template('pagina-login.html')
     # final
