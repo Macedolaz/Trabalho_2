@@ -1,0 +1,10 @@
+# pip install -r requirements.txt
+
+pip install mnemonic
+pip install flask
+pip install pysqlite3
+pip install flask-session
+
+npm install node-fetch
+npm install bcryptjs
+npm install body-parser
