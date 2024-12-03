@@ -15,14 +15,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.post('/login', async (req, res) => {
-  console.log('Corpo da requisição:', req.body); // Log para debug
+  console.log('Corpo da requisição:', req.body); // Log para debugar
   const fraseSemente = req.body.palavra_semente;
 
   if (!fraseSemente || fraseSemente.trim() === '') {
     return res.status(400).json({ error: 'A frase semente deve ser preenchida' });
   }
 
-  console.log('Frase-semente sendo enviada para o Flask:', fraseSemente); // Log para debug
+  console.log('Frase_semente sendo enviada para o Flask:', fraseSemente); // Log para debugar
 
   try {
     const flaskResponse = await fetch('http://localhost:5000/login', {
@@ -34,7 +34,7 @@ app.post('/login', async (req, res) => {
     const flaskData = await flaskResponse.text();
 
     if (flaskResponse.ok) {
-      res.json({ message: 'Login bem-sucedido!', "frase_semente": fraseSemente });
+      res.json({ message: 'Login bem sucedido!', "frase_semente": fraseSemente });
     } else {
       res.status(flaskResponse.status).json({ error: flaskData });
     }
